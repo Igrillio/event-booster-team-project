@@ -1,0 +1,179 @@
+.border {
+  position: absolute;
+  height: 103px;
+  width: 95px;
+  left: 37px;
+  top: -10px;
+  border: 1px solid rgba(220, 86, 197, 0.3);
+  border-radius: 50px 0px;
+  z-index: -1;
+
+}
+
+.event-gallery {
+  padding: 60px 0;
+  background-color: black;
+  background-image: url(./../images/main-section/bg-drops.png);
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    position: relative;
+    width: calc(50% - 10px);
+    margin-bottom: 40px;
+    transform: scale(1);
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      transition: transform 250ms linear;
+    }
+
+  }
+
+  &__img {
+    padding-bottom: 8px;
+    width: 100%;
+    max-width: 120px;
+    height: 151px;
+
+    border-radius: 50px 0;
+  }
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__name {
+    padding-bottom: 8px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: $accent-color;
+  }
+
+  &__date {
+    padding-bottom: 8px;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: $main-white-color;
+  }
+
+  &__location {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: $main-white-color;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .border {
+    height: 145px;
+    width: 130px;
+    top: -10px;
+    left: 50px;
+
+  }
+
+  .event-gallery {
+    &__img {
+      width: 100%;
+      max-width: 165px;
+      height: 205px;
+
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .border {
+    height: 120px;
+    width: 112px;
+    top: -14px;
+    left: 46px;
+
+  }
+
+  .event-gallery {
+    &__item {
+      width: calc(25% - 10px);
+
+      margin-bottom: 54px;
+    }
+
+    &__img {
+      width: 100%;
+      max-width: 141px;
+      height: 178px;
+
+    }
+  }
+
+  .event-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__name {
+      font-size: 16px;
+      line-height: 20px;
+      color: $accent-color;
+    }
+
+    &__date {
+      font-size: 16px;
+      line-height: 20px;
+      color: $main-white-color;
+    }
+
+    &__location {
+      font-size: 14px;
+      line-height: 17px;
+      color: $main-white-color;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .border {
+    width: 226px;
+    height: 212px;
+    top: -17px;
+    left: 17px;
+
+  }
+
+  .event-gallery {
+    &__item {
+      width: calc(24% - 10px);
+      margin-bottom: 59px;
+    }
+
+    &__img {
+      width: 100%;
+      max-width: 267px;
+      height: 337px;
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .border {
+    width: 226px;
+    height: 212px;
+    top: -17px;
+    left: 67px;
+  }
+}
+

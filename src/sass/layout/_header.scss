@@ -1,0 +1,295 @@
+.header {
+  position: relative;
+  background-color: #191616;
+  background-image: url(../images/header/bg-mob.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(../images/header/bg-mob-2x.jpg);
+  }
+
+  padding-top: 80px;
+  padding-bottom: 112px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/header/bg-tab.jpg);
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/header/bg-tab-2x.jpg);
+    }
+    padding-top: 40px;
+
+  }
+  @media screen and (min-width: 1280px) {
+    background-image: url(../images/header/bg-desk.jpg);
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/header/bg-desk-2x.jpg);
+    }
+
+    padding-bottom: 284px;
+  }
+
+  &__logo {
+    position: absolute;
+    top: -90px;
+    width: 107px;
+    height: 180px;
+    clip-path: ellipse(107px 90px at 107px 90px);
+    background-color: linear-gradient(
+      136.07deg,
+      rgba(196, 196, 196, 0.03) 10.75%,
+      rgba(196, 196, 196, 0) 92.33%
+    );
+    backdrop-filter: blur(30px);
+    transform: rotate(180deg);
+
+    @media screen and (min-width: 768px) {
+      top: -151px;
+      width: 180px;
+      height: 302px;
+      clip-path: ellipse(180px 151px at 180px 151px);
+    }
+    @media screen and (min-width: 1280px) {
+      top: -193px;
+      width: 229px;
+      height: 386px;
+      clip-path: ellipse(229px 193px at 229px 193px);
+    }
+  }
+
+  &__logo-icon {
+    position: absolute;
+    z-index: 1;
+    top: 48;
+    left: 30;
+    fill: $main-white-color;
+    transform: rotate(180deg);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+    @media screen and (min-width: 768px) {
+      width: 101px;
+      height: 30px;
+      top: 102px;
+      left: 82px;
+    }
+    @media screen and (min-width: 1280px) {
+      width: 138px;
+      height: 73px;
+      top: 91px;
+      left: 66px;
+    }
+
+    &:hover,
+    &:focus {
+      fill: $accent-color;
+    }
+
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.22;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    color: $accent-color;
+    width: 220px;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+      text-shadow: 0 0 5px $main-white-color, 0 0 8px $accent-color,
+        0 0 9px $main-white-color, 0 0 10px $main-white-color,
+        0 0 15px $accent-color, 0 0 20px $accent-color;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 30px;
+      line-height: 1.23;
+      margin-bottom: 40px;
+      width: 400px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 50px;
+      line-height: 1.22;
+      margin-bottom: 48px;
+      width: 608px;
+    }
+  }
+}
+
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__element {
+    position: relative;
+
+    width: 288px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 1.25;
+
+    border-radius: 20px;
+
+    color: $main-gray-color;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 336px;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 32px;
+      }
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: 288px;
+    }
+  }
+
+  &__input {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    padding-left: 32px;
+    border-radius: 20px;
+    color: $accent-color;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    outline: none;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::placeholder {
+      color: $main-gray-color;
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid $accent-color;
+
+      outline: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 14;
+    right: 20;
+    fill: $main-gray-color;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .search-form__input:hover + &,
+    .search-form__input:focus + & {
+      fill: $accent-color;
+    }
+  }
+
+
+  &__select {
+    width: 100%;
+    height: 100%;
+    padding-left: 32px;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: none;
+    outline: none;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      border: 1px solid $accent-color;
+
+      outline: none;
+    }
+  }
+}
+
+.select__icon {
+  position: absolute;
+  top: 14;
+  right: 20;
+  fill: $main-gray-color;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .search-form__select:hover + &,
+  .search-form__select:focus + & {
+    fill: $accent-color;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-up {
+  scroll-behavior: smooth;
+  position: fixed;
+  width: 70px;
+  height: 50px;
+  bottom: 25px;
+  right: 25px;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover .scroll-up__icon {
+    transform: scale(1.2);
+    fill: $accent-color;
+    border-color: $accent-color;
+  }
+
+  &__icon {
+    fill: rgba(255, 255, 255, 0.351);
+  }
+
+  &:hover + .scroll-up {
+    transform: scale(1.2);
+    fill: $accent-color;
+    border-color: $accent-color;
+  }
+}
+
+.no-show {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
